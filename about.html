@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>Patio Bear</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+  .w3-row-padding img {margin-bottom: 12px}
+  /* Set the width of the sidebar to 120px */
+  .w3-sidebar {width: 120px;background: #222;}
+  /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+  #main {
+    /* margin: 50px auto; */
+    margin-top: 50px;
+  }
+
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  .navImg {
+    margin: 5px;
+  }
+  /* Remove margins from "page content" on small screens */
+  @media only screen and (max-width: 600px) {
+    img {
+      max-width: 300;
+    }
+    nav {
+      height: 50px;
+    }
+    .nI1 {
+      width: 90px;
+    }
+    .nI2 {
+      width: 100px;
+    }
+    .navImg {
+      margin: 10px;
+    }
+  }
+</style>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-top w3-bar-block" style="background-image: url('/orange_banner.png');">
+    <a class="navLink" href="/"><img class="navImg nI1" src="https://see.fontimg.com/api/renderfont4/y1EY/eyJyIjoiZnMiLCJoIjo1OCwidyI6MTAwMCwiZnMiOjU4LCJmZ2MiOiIjMTAxMDEwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/aG9tZQ/winterland.png" alt="Home"></a>
+    <a class="navLink" href="/about.html"><img class="navImg nI2" src="https://see.fontimg.com/api/renderfont4/y1EY/eyJyIjoiZnMiLCJoIjo1OCwidyI6MTAwMCwiZnMiOjU4LCJmZ2MiOiIjMTAxMDEwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YWJvdXQ/winterland.png" alt="About"></a>  
+</nav>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <h1>About</h1>
+  <div>
+      Patio Bear's first album, <i>Shaking Hands</i>, was released in September 2020. 
+      The music was written and performed by Michael Zachor and the lyrics were written by Ryan Totaro.
+  </div>
+  <iframe style="border-radius:12px; margin-top: 10px; margin-bottom: 10px;" src="https://open.spotify.com/embed/album/0paubik4TzoILwYqttY90D?utm_source=generator&theme=0" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  <div>
+      "Nothing is Everything" will be released on March 11, 2022.
+      The music and lyrics were written and performed by Michael Zachor.
+  </div>
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
