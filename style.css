@@ -1,6 +1,68 @@
 body {
-    background-image: url('nothing_is_everything_pic.png');
+    /* background-image: url('nothing_is_everything_pic.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
+    background-color: #B5A7B6;
+    font-family: "Montserrat", sans-serif;
+}
+
+header:hover, img:hover {
+    cursor: pointer;
+}
+
+.album-cover {
+    height: 80%;
+    transition: 1s;
+}
+
+.album-cover-selected {
+    height: 100%;
+}
+
+.album-cover-deselected {
+    height: 80%;
+}
+@media only screen and (max-width: 1000px) {
+    .album-cover, .album-cover-deselected {
+        height: 60%;
+    }
+    .album-cover-selected {
+        height: 70%;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .album-cover, .album-cover-deselected {
+        height: 90%;
+    }
+    .album-cover-selected {
+        height: 100%;
+    }
+}
+
+.albums-container {
+    height: 90vh;
+}
+
+.albums-row {
+    height: 50%;
+}
+
+.info-row {
+    height: max-content;
+}
+
+.release-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* The height of the item will now be 56.25% of the width. */
+}
+
+.release-video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
 }

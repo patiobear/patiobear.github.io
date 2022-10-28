@@ -16,21 +16,45 @@
     /* margin: 50px auto; */
     margin-top: 50px;
   }
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
 
   nav {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    height: 50px;
+  }
+
+  .navLink {
+    font-size: 30px;
+    text-decoration: none;
   }
 
   .navImg {
     margin: 5px;
   }
+
+  .release-video-container {
+    position: relative;
+    width: 550px;
+    height: 0;
+    padding-bottom: calc(550px*.5625);
+  }
+
+  .release-img {
+    display: block; 
+    width: 25%; 
+    height: auto;
+  }
   /* Remove margins from "page content" on small screens */
   @media only screen and (max-width: 600px) {
-    img {
+    /* img {
       max-width: 300;
-    }
+    } */
     nav {
       height: 50px;
     }
@@ -43,21 +67,28 @@
     .navImg {
       margin: 10px;
     }
+    .release-img {
+      width: 60%;
+    }
+    .release-video-container {
+      width: 300px;
+      padding-bottom: calc(300px*.56625);
+    } 
   }
 </style>
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-top w3-bar-block" style="background-image: url('/orange_banner.png');">
-    <a class="navLink" href="/"><img class="navImg nI1" src="https://see.fontimg.com/api/renderfont4/y1EY/eyJyIjoiZnMiLCJoIjo1OCwidyI6MTAwMCwiZnMiOjU4LCJmZ2MiOiIjMTAxMDEwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/aG9tZQ/winterland.png" alt="Home"></a>
-    <a class="navLink" href="/about.html"><img class="navImg nI2" src="https://see.fontimg.com/api/renderfont4/y1EY/eyJyIjoiZnMiLCJoIjo1OCwidyI6MTAwMCwiZnMiOjU4LCJmZ2MiOiIjMTAxMDEwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/YWJvdXQ/winterland.png" alt="About"></a>  
+<nav class="w3-top w3-bar-block" style="background-color: #B5A7B6;">
+  <a class="navLink" href="/">Home</a>
+  <a class="navLink" href="/about.html">About</a>  
 </nav>
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <h1>About</h1>
-  <div>
+  <!-- <div>
       Patio Bear's first album, <i>Shaking Hands</i>, was released in September 2020. 
       The music was written and performed by Michael Zachor and the lyrics were written by Ryan Totaro.
   </div>
@@ -66,9 +97,58 @@
       Follow up single "Nothing is Everything" was released on March 11, 2022.
       The music and lyrics were written and performed by Michael Zachor.
   </div>
-  <iframe style="border-radius:12px; margin-top: 10px; margin-bottom: 10px;" src="https://open.spotify.com/embed/track/0V3CJdrQgs7SCCXGYjQfbB?utm_source=generator" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  <iframe style="border-radius:12px; margin-top: 10px; margin-bottom: 10px;" src="https://open.spotify.com/embed/track/0V3CJdrQgs7SCCXGYjQfbB?utm_source=generator" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->
   <!-- END PAGE CONTENT -->
-</div>
+  <div class='release-info' style="margin-bottom: 40px;">
+    <img src="/tenyears_art.jpeg" alt="Ten Years cover art" class="release-img">
+    <h3 class='release-title' style="margin: 0;">Ten Years</h3>
+    <div class='release-type'>Single</div>
+    <div class='release-date'>October 28, 2022</div>
+    <div class='release-credits'>Music and Lyrics by Michael Zachor</div>
+    <iframe style="border: 0; width: 100%; height: 42px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/track=3656873303/size=small/bgcol=333333/linkcol=c53cbf/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/ten-years">Ten Years by Patio Bear</a></iframe>
+  </div>
+  <div class='release-info' style="margin-bottom: 40px;">
+    <img src="/nothing_is_everything_pic.png" alt="Nothing Is Everything cover art" class="release-img">
+    <h3 class='release-title' style="margin: 0;">Nothing is Everything</h3>
+    <div class='release-type'>Single</div>
+    <div class='release-date'>March 11, 2022</div>
+    <div class='release-credits'>Music and Lyrics by Michael Zachor</div>
+    <iframe class="mt-2" style="border: 0; width: 100%; height: 42px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/track=2492101612/size=small/bgcol=333333/linkcol=e99708/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/nothing-is-everything">Nothing is Everything by Patio Bear</a></iframe>
+    <div class='release-video-container'>
+      <iframe width=100% src="https://www.youtube.com/embed/QrHkqM4QdQE" title="YouTube video player" style="margin: auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class='release-info' style="margin-bottom: 40px;">
+    <img src="/patiobear 2.JPG" alt="Shaking Hands cover art" class="release-img">
+    <h3 class='release-title' style="margin: 0;">Shaking Hands</h3>
+    <div class='release-type'>Album</div>
+    <div class='release-date'>September 18, 2020</div>
+    <div class='release-credits'>Music by Michael Zachor, Lyrics by Ryan Totaro</div>
+    <iframe style="border: 0; width: 100%; height: 373px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/album=1360900596/size=large/bgcol=333333/linkcol=cce0e8/artwork=small/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/album/shaking-hands">Shaking Hands by Patio Bear</a></iframe>  </div>
+    <div class='release-video-container'>
+      <iframe width=100% src="https://www.youtube.com/embed/RsPvBinZ8W8" title="YouTube video player" style="margin: auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <!-- <footer class="w3-content w3-text-grey w3-xlarge">
+      <a href="https://www.facebook.com/patio.bear.9"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a href="https://instagram.com/patiobear_music?igshid=1ccp6v85q1lv6"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <span class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></span> -->
+    <!-- End footer -->
+    <!-- </footer> -->
+
+
 
 </body>
 </html>

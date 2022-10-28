@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patio Bear</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="text-center mt-2 border-bottom" onclick="refresh()"><h1>Patio Bear</h1></header>
+    <div class="container-l albums-container">
+        
+        <div class="row mt-5 mb-2 info-row">
+            <div class="col d-flex align-items-center" id="release-info"></div>
+            <div class="col-8" id="release-youtube"><h1>New single 'Ten Years' out now</h1></div>
+        </div>
+        <div class="row mt-5 media-row" id="release-music">
+        </div>
+        <div class="row mt-5 albums-row border border-info">
+            <div class="col-12 col-sm-4 h-sm-100 h-50 border border-primary">
+                <img class="d-block m-auto album-cover" onclick="enlarge(this, 'tenYears')" src="/tenyears_art.jpeg" alt="Ten Years">
+            </div>
+            <div class="col-12 col-sm-4 h-sm-100 h-50">
+                <img class="d-block m-auto album-cover" onclick="enlarge(this, 'nothingIsEverything')" src="/nothing_is_everything_pic.png" alt="Nothing Is Everything">
+            </div>
+            <div class="col-12 col-sm-4 h-sm-100 h-50">
+                <img class="d-block m-auto album-cover" onclick="enlarge(this, 'shakingHands')" src="/patiobear 2.JPG" alt="Shaking Hands">
+            </div>
+        </div>
+        <div class="row mt-2 border-top pt-3 music-row">
+            <div class="col text-center">
+                <a href="https://open.spotify.com/track/0V3CJdrQgs7SCCXGYjQfbB?si=d563d5c0f9294d57" class="fa fa-spotify text-dark" style="width:100px; height:50px; font-size:42px; text-decoration: none;"></a>
+            </div>
+            <div class="col text-center">
+                <a href="https://music.apple.com/us/artist/patio-bear/1531407958" class="fa fa-apple text-dark" style="width:100px; height:50px; font-size:42px; text-decoration: none;"></a>
+            </div>
+        </div>
+        
+    </div>
+</body>
