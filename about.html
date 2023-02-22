@@ -12,6 +12,27 @@
   /* Set the width of the sidebar to 120px */
   .w3-sidebar {width: 120px;background: #222;}
   /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+  .loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 9998;
+  }
+  .loadingBear {
+    display: block;
+    margin: auto;
+    width: 40%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
+  .loadingBearText {
+    margin: auto;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
   #main {
     /* margin: 50px auto; */
     margin-top: 50px;
@@ -50,6 +71,11 @@
     width: 25%; 
     height: auto;
   }
+
+  .plus:hover {
+    cursor: pointer;
+    /* border: 1px solid black; */
+  }
   /* Remove margins from "page content" on small screens */
   @media only screen and (max-width: 600px) {
     /* img {
@@ -78,27 +104,63 @@
 </style>
 <body class="w3-black">
 
+  <div class="loading">
+    <img class='loadingBear' src="bear.png">
+    <h1 class="loadingBearText">Loading...</h1>
+  </div>
+
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-top w3-bar-block" style="background-color: #B5A7B6;">
-  <a class="navLink" href="/">Home</a>
-  <a class="navLink" href="/about.html">About</a>  
+<nav class="w3-top w3-bar-block" style="background-color: #6B341Fff;">
+  <a class="navLink" href="/">Patio Bear</a>
+  <a class="navLink" href="/about.html">Music</a>  
 </nav>
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
-  <h1>About</h1>
-  <!-- <div>
-      Patio Bear's first album, <i>Shaking Hands</i>, was released in September 2020. 
-      The music was written and performed by Michael Zachor and the lyrics were written by Ryan Totaro.
+  <h1>Music</h1>
+  <div class='release-info' style="margin-bottom: 40px;">
+    <img src="/liquidsun.png" alt="Liquid Sun cover art" class="release-img">
+    <h3 class='release-title' style="margin: 0;">Liquid Sun</h3>
+    <div class='release-type'>Single</div>
+    <div class='release-date'>February 24, 2023</div>
+    <div class='release-credits'>Music and Lyrics by Michael Zachor</div>
+    <iframe style="border: 0; width: 100%; height: 42px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/track=3656873303/size=small/bgcol=333333/linkcol=6B341Fff/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/ten-years">Waterfall Sunrise by Patio Bear</a></iframe>
+    <div class="plus-container"><span class="plus" id="plus4">Lyrics   <span class="fa fa-angle-down"></span></span></div>
+    <div class="release-content" id="release-content4" style="display: none;">
+      <div class='release-lyrics' style="font-size: 12px;">
+        I wake before the sun<br>
+        Inbetween realities<br>
+        Heavy eyelids<br>
+        Weighed down by the remnants of persistent dreams<br><br>
+        
+        All their little secrets<br>
+        Elegantly synchronized<br>
+        Pull me inwards<br>
+        Disintegrating back into my dreams<br><br>
+        
+        Far from fickle feelings and monotony<br>
+        Velvet blur and phantom feel possess me<br>
+        I've been in a funk a couple months now <br>
+        The lasso sun can pull me up if I let it<br><br>
+        
+        Don't wake me up as my mind makes up melted memories<br>
+        Memories are dreams in the sense of reality<br>
+        Don't wake me I'd rather dream<br><br>
+        
+        Honey hues crochet the blinds and paint the walls<br>
+        Inner machinations crash like waterfalls<br><br>
+        
+        Open eyes squint to see a room so bright<br>
+        Golden liquid sun illuminates my face in vibrant light<br><br>
+        
+        I tug at braided sun rays<br>
+        Left me hanging yesterday<br>
+        Busy washing rain away<br>
+        I hold on tight anyway<br>
+      </div>
+    </div>
   </div>
-  <iframe style="border-radius:12px; margin-top: 10px; margin-bottom: 10px;" src="https://open.spotify.com/embed/album/0paubik4TzoILwYqttY90D?utm_source=generator&theme=0" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-  <div>
-      Follow up single "Nothing is Everything" was released on March 11, 2022.
-      The music and lyrics were written and performed by Michael Zachor.
-  </div>
-  <iframe style="border-radius:12px; margin-top: 10px; margin-bottom: 10px;" src="https://open.spotify.com/embed/track/0V3CJdrQgs7SCCXGYjQfbB?utm_source=generator" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->
-  <!-- END PAGE CONTENT -->
   <div class='release-info' style="margin-bottom: 40px;">
     <img src="/tenyears_art.jpeg" alt="Ten Years cover art" class="release-img">
     <h3 class='release-title' style="margin: 0;">Ten Years</h3>
@@ -106,6 +168,35 @@
     <div class='release-date'>October 28, 2022</div>
     <div class='release-credits'>Music and Lyrics by Michael Zachor</div>
     <iframe style="border: 0; width: 100%; height: 42px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/track=3656873303/size=small/bgcol=333333/linkcol=c53cbf/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/ten-years">Ten Years by Patio Bear</a></iframe>
+    <div class="plus-container"><span class="plus" id="plus3">Lyrics   <span class="fa fa-angle-down"></span></span></div>
+    <div class="release-content" id="release-content3" style="display: none;">
+      <div class='release-lyrics' style="font-size: 12px;">
+        Window seats so I talk to your reflection<br>
+        City lights or a portal to the next dimension<br><br>
+        Can of coke, back and forth, back and forth<br>
+        Moving forwards, turning backwards, back and forth, back and forth<br><br>
+        In ten more years we'll figure it out<br>
+        I don't quite know what we're figuring out<br>
+        But this infinite recursion of reactions to everything is<br>
+        Driving<br><br>
+        
+        Driving us out of the station<br>
+        And my life (is falling behind)<br>
+        I should be out of the station (but I'm in the woods)<br><br>
+        
+        Looks like a black hole on the right<br>
+        I meant to text you every night<br>
+        We're a long way from home<br>
+        In ten more years we'll get it right<br><br>
+        
+        Full moon in my room<br>
+        I'm the only one it's over<br>
+        Full moon in my room<br>
+        I'm the only one it's over<br>
+        I'm the only one it's over<br>
+        It's over<br>
+      </div>
+    </div>
   </div>
   <div class='release-info' style="margin-bottom: 40px;">
     <img src="/nothing_is_everything_pic.png" alt="Nothing Is Everything cover art" class="release-img">
@@ -114,6 +205,21 @@
     <div class='release-date'>March 11, 2022</div>
     <div class='release-credits'>Music and Lyrics by Michael Zachor</div>
     <iframe class="mt-2" style="border: 0; width: 100%; height: 42px; max-width: 400px; margin-top: 5px;" src="https://bandcamp.com/EmbeddedPlayer/track=2492101612/size=small/bgcol=333333/linkcol=e99708/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/nothing-is-everything">Nothing is Everything by Patio Bear</a></iframe>
+    <div class="plus-container"><span class="plus" id="plus2">Lyrics   <span class="fa fa-angle-down"></span></span></div>
+    <div class="release-content" id="release-content2" style="display: none;">
+      <div class='release-lyrics' style="font-size: 12px;">
+        I'm reaching out for something I can't hold<br>
+        or even comprehend<br>
+        but I'm reaching anyway<br><br>
+
+        I'm holding onto meaningless ideas<br>
+        of answers to my life<br>
+        but now I know the answer is the question<br><br>
+        
+        All I know is I am nothing<br>
+        And nothing's everthing<br>
+      </div>
+    </div>
     <div class='release-video-container'>
       <iframe width=100% src="https://www.youtube.com/embed/QrHkqM4QdQE" title="YouTube video player" style="margin: auto;
       position: absolute;
@@ -140,15 +246,7 @@
     </div>
   </div>
 
-    <!-- Footer -->
-    <!-- <footer class="w3-content w3-text-grey w3-xlarge">
-      <a href="https://www.facebook.com/patio.bear.9"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-      <a href="https://instagram.com/patiobear_music?igshid=1ccp6v85q1lv6"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <span class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></span> -->
-    <!-- End footer -->
-    <!-- </footer> -->
-
-
-
+  <script src="script.js">
+  </script>
 </body>
 </html>

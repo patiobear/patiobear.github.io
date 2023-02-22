@@ -12,6 +12,27 @@
   /* Set the width of the sidebar to 120px */
   .w3-sidebar {width: 120px;background: #222;}
   /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+  .loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 9998;
+  }
+  .loadingBear {
+    display: block;
+    margin: auto;
+    width: 40%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
+  .loadingBearText {
+    margin: auto;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
   #main {
     /* margin: 50px auto; */
     margin-top: 50px;
@@ -82,17 +103,22 @@
 </style>
 <body class="w3-black">
 
+  <div class="loading">
+    <img class='loadingBear' src="bear.png">
+    <h1 class="loadingBearText">Loading...</h1>
+  </div>
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-top w3-bar-block" style="background-color: #B5A7B6;">
-  <a class="navLink" href="/">Home</a>
-  <a class="navLink" href="/about.html">About</a>  
+<nav class="w3-top w3-bar-block" style="background-color: #6B341Fff;">
+  <a class="navLink" href="/">Patio Bear</a>
+  <a class="navLink" href="/about.html">Music</a>  
 </nav>
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <div class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <img class="albumCover" src="tenyears_art.jpeg" alt="album cover" class="w3-image" width="500" height="500">
+    <h2>Liquid Sun</h2>
+    <img class="albumCover" src="liquidsun.png" alt="album cover" class="w3-image" width="500" height="500">
     
     <!-- <div class="w3-cell-row">
       <div class="w3-cell aspect-ratio">
@@ -106,7 +132,7 @@
     </div>
     <div class="w3-cell-row">
       <div class="w3-cell">
-        <iframe style="border: 0; width: 50%; height: 42px; margin-bottom: 10px;" src="https://bandcamp.com/EmbeddedPlayer/track=3656873303/size=small/bgcol=333333/linkcol=9a64ff/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/ten-years">Ten Years by Patio Bear</a></iframe>
+        <iframe style="border: 0; width: 50%; height: 42px; margin-bottom: 10px;" src="https://bandcamp.com/EmbeddedPlayer/track=3656873303/size=small/bgcol=333333/linkcol=6B341Fff/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/ten-years">Ten Years by Patio Bear</a></iframe>
       </div>
     </div>
     <div class="w3-cell-row">
@@ -177,6 +203,7 @@
 
 <!-- END PAGE CONTENT -->
 </div>
-
+<script src="script.js">
+</script>
 </body>
 </html>
