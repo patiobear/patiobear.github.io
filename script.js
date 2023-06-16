@@ -12,6 +12,9 @@ document.onreadystatechange = function () {
     }
 }
 
+document.getElementById('plus5').onclick = () => {
+    show(5);
+}
 document.getElementById('plus4').onclick = () => {
     show(4);
 }
