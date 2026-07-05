@@ -64,6 +64,7 @@ function loadVideo(index) {
 
   const media = videos[index];
   currentItem = media;
+  document.body.dataset.layout = media.layout || "cover";
 
   songTitle.textContent = media.title;
   songCredits.innerHTML = media.credits;

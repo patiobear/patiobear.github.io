@@ -5,7 +5,8 @@
       "type": "video",
       "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
       "desktop": "assets/video/1-2-24_b.mov",
-      "mobile": "assets/video/1-2-24_b.mov"
+      "mobile": "assets/video/1-2-24_b.mov",
+      "layout": "cover"
     },
     {
       "title": "Traffic Light",
@@ -13,7 +14,8 @@
       "type": "video",
       "credits": "<p>2026</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
       "desktop": "assets/video/traffic-light-horiz-2-15-26.mp4",
-      "mobile": "assets/video/traffic-light-horiz-2-15-26.mp4"
+      "mobile": "assets/video/traffic-light-horiz-2-15-26.mp4",
+      "layout": "cover"
     },
     {
       "title": "Liquid Sun",
@@ -21,7 +23,8 @@
       "type": "video",
       "credits": "<p>2023</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
       "desktop": "assets/video/dana-undawata-2-15-26-horiz-a.mp4",
-      "mobile": "assets/video/dana-undawata-2-15-26-horiz-a.mp4"
+      "mobile": "assets/video/dana-undawata-2-15-26-horiz-a.mp4",
+      "layout": "cover"
     },
     {
       "title": "Bodyfloat",
@@ -29,7 +32,8 @@
       "type": "video",
       "credits": "<p>2020</p><p>Music: Michael Zachor</p><p>Video: Austin Barrón</p>",
       "desktop": "assets/video/bodyfloat-horiz.mp4",
-      "mobile": "assets/video/bodyfloat-horiz.mp4"
+      "mobile": "assets/video/bodyfloat-horiz.mp4",
+      "layout": "cover"
     },
     {
       "title": "Rave promo",
@@ -37,7 +41,8 @@
       "type": "video",
       "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Rina Peterson</p><p style='font-size: 12px;'>A club promo for The Chocolate Factory.</p>",
       "desktop": "assets/video/Rave-promo.mov",
-      "mobile": "assets/video/Rave-promo.mov"
+      "mobile": "assets/video/Rave-promo.mov",
+      "layout": "cover"
     },
     {
       "title": "Nothing Else promo",
@@ -45,7 +50,8 @@
       "type": "video",
       "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Rina Peterson</p><p style='font-size: 12px;'>An ad for Nothing Else skincare.</p>",
       "desktop": "assets/video/sea-buckthorn.mov",
-      "mobile": "assets/video/sea-buckthorn.mov"
+      "mobile": "assets/video/sea-buckthorn.mov",
+      "layout": "cover"
     },
     {
       "title": "Dolos",
@@ -53,7 +59,8 @@
       "type": "video",
       "credits": "<p>2024</p><p>Music: Michael Zachor</p><p>Director: Austin Barrón</p><p style='font-size: 12px;'>An ad for Dolos cigarettes</p>",
       "desktop": "assets/video/dolos.mp4",
-      "mobile": "assets/video/dolos.mp4"
+      "mobile": "assets/video/dolos.mp4",
+      "layout": "letterbox"
     },
     {
       "title": "Falsifiers",
@@ -61,7 +68,8 @@
       "type": "video",
       "credits": "<p>2024</p><p>Music: Michael Zachor</p><p>Director: Ryan Totaro</p><p style='font-size: 12px;'>A trailer for <i>Falsifiers</i> (2024), a short film.</p>",
       "desktop": "assets/video/falsifiers-trailer.mp4",
-      "mobile": "assets/video/falsifiers-trailer.mp4"
+      "mobile": "assets/video/falsifiers-trailer.mp4",
+      "layout": "letterbox"
     },
     {
       "title": "pretty peculiar",
@@ -69,7 +77,8 @@
       "type": "audio",
       "credits": "<p>2023</p><p>Music: Michael Zachor</p>",
       "audio": "assets/audio/pretty-peculiar-abridged_5-3.wav",
-      "artwork": "assets/images/prettypeculiar.png"
+      "artwork": "assets/images/prettypeculiar.png",
+      "layout": "cover"
     },
     {
       "title": "Ten Years",
@@ -77,7 +86,8 @@
       "type": "audio",
       "credits": "<p>2022</p><p>Music: Michael Zachor</p>",
       "audio": "assets/audio/ten-years-sample.wav",
-      "artwork": "assets/images/tenyears.jpeg"
+      "artwork": "assets/images/tenyears.jpeg",
+      "layout": "cover"
     },
     {
       "title": "Untitled Christmas Jam",
@@ -85,7 +95,8 @@
       "type": "audio",
       "credits": "<p>2025</p><p>Music: Michael Zachor</p>",
       "audio": "assets/audio/christmas-abridged.wav",
-      "artwork": "assets/images/christmas.png"
+      "artwork": "assets/images/christmas.png",
+      "layout": "cover"
     },
     {
       "title": "Woda Marznie",
@@ -93,6 +104,7 @@
       "type": "audio",
       "credits": "<p>2020</p><p>Music: Michael Zachor</p>",
       "audio": "assets/audio/woda-marznie-sample.wav",
-      "artwork": "assets/images/shakinghands.JPG"
+      "artwork": "assets/images/shakinghands.JPG",
+      "layout": "cover"
     }
   ]

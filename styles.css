@@ -30,11 +30,23 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: black;
+}
+
+/* default = COVER (your current behavior) */
+body[data-layout="cover"] .bg-video {
   object-fit: cover;
   object-position: center;
-  z-index: -1;
-  transition: opacity 0.4s ease;
-  opacity: 0;
+}
+
+/* SCORES = LETTERBOX */
+body[data-layout="letterbox"] .bg-video {
+  object-fit: contain;
+  object-position: center;
+  background: black;
 }
 
 .bg-video.active {
@@ -344,6 +356,7 @@ a {
 
   .bottom-toolbar {
     gap: 0.75rem;
+    margin-bottom: 40px;
   }
 
   .controls {
