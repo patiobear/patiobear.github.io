@@ -212,7 +212,29 @@ function updateProgress() {
   progress.value =
     (activeVideo.currentTime / activeVideo.duration) * 100;
 }
+const aboutBtn = document.querySelector(".nav-item-about");
+const aboutModal = document.getElementById("aboutModal");
+const closeAbout = document.getElementById("closeAbout");
 
+aboutBtn.addEventListener("click", () => {
+  aboutModal.classList.add("open");
+});
+
+closeAbout.addEventListener("click", () => {
+  aboutModal.classList.remove("open");
+});
+
+aboutModal.addEventListener("click", (e) => {
+  if (e.target === aboutModal) {
+    aboutModal.classList.remove("open");
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    aboutModal.classList.remove("open");
+  }
+});
 // progressBar.addEventListener("click", (e) => {
 //   const activeVideo =  getActiveMedia();
 
