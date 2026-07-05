@@ -12,6 +12,7 @@
 /* Prevent scrolling */
 html, body {
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -132,9 +133,17 @@ a {
 }
 
 .bottom-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 2rem calc(env(safe-area-inset-bottom) + 12px);
+  z-index: 20;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0)
+  );
 }
 
 .controls {
@@ -356,7 +365,7 @@ a {
 
   .bottom-toolbar {
     gap: 0.75rem;
-    margin-bottom: 80px;
+    /* margin-bottom: 160px; */
   }
 
   .controls {
