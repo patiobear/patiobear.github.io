@@ -1,163 +1,135 @@
 <!DOCTYPE html>
-<html>
-<title>Patio Bear</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<style>
-  body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-  .w3-row-padding img {margin-bottom: 12px}
-  /* Set the width of the sidebar to 120px */
-  .w3-sidebar {width: 120px;background: #222;}
-  /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-  .loading {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #000;
-    z-index: 9998;
-  }
-  .loadingBear {
-    display: block;
-    margin: auto;
-    width: 40%;
-    height: auto;
-    opacity: 1;
-    transition: opacity 1s linear;
-  }
-  .loadingBearText {
-    margin: auto;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 1s linear;
-  }
-  #main {
-    /* margin: 50px auto; */
-    background-color: #BBBBD6;
-    color: white;
-    margin-top: 50px;
-  }
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-  }
-  .albumCover {
-    /* margin-bottom: 20px; */
-    max-width: 70%;
-    height: auto;
-    width: auto;
-  }
-  .aspect-ratio {
-    position: relative;
-    width: 80%;
-    height: 0;
-    padding-bottom: 56.25%; /* The height of the item will now be 56.25% of the width. */
-  }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Album Player</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+</head>
 
-  /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
-  .aspect-ratio iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-
-  nav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    height: 50px;
-  }
-
-  .navLink {
-    font-size: 30px;
-    text-decoration: none;
-  }
-
-  .navImg {
-    margin: 5px;
-  }
-  /* Remove margins from "page content" on small screens */
-  @media only screen and (max-width: 600px) {
-    /* .albumCover {
-      max-width: 300;
-    } */
-    .aspect-ratio {
-      width: 100%
-    }
-    nav {
-      height: 50px;
-    }
-    .nI1 {
-      width: 90px;
-    }
-    .nI2 {
-      width: 100px;
-    }
-    .navImg {
-      margin: 10px;
-    }
-  }
-</style>
 <body>
+  <video 
+    id="desktopVideo"
+    class="bg-video desktop-video"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+  ></video>
 
-  <div class="loading">
-    <img class='loadingBear' src="bear.png">
-    <h1 class="loadingBearText">Loading...</h1>
+  <video 
+    id="mobileVideo"
+    class="bg-video mobile-video"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+  ></video>
+
+  <img 
+    id="artwork"
+    class="bg-artwork"
+  />
+
+  <div class="overlay">
+    <div class="top-meta-info">
+      <div class="song-info">
+        <div class="logo">
+          <img class="patiobear-img" src="bear copy.png" height="50" width="50">
+          <div>
+            <h1 id="patiobear">Patio Bear</h1>
+          </div>
+        </div>
+        <h2 id="songTitle"></h2>
+        <div id="songCredits"></div>
+      </div>
+      <div class="navbar">
+        <button class="playback-control nav-item nav-item-songs" data-category="songs">Songs</button>
+        <button class="playback-control nav-item nav-item-scores" data-category="scores">Scores</button>
+        <button class="playback-control nav-item nav-item-promos" data-category="promos">Promos</button>
+        <div class="links">
+          <a href="https://open.spotify.com/artist/56UjJs0m3Frd740BGGNBwm?si=zR4A1UVMSJOA3hPgvLE9JQ"><i class="fa-brands fa-spotify"></i></a>
+          <a href="https://music.apple.com/us/artist/patio-bear/1531407958"><i class="fa-brands fa-apple"></i></a>
+          <a href="https://www.youtube.com/@patiobear8681"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://patiobear.bandcamp.com/music"><i class="fa-brands fa-bandcamp"></i></a>
+        </div>
+        <!-- <button class="playback-control nav-item nav-item-about">About</button> -->
+    </div>
+    </div>
+      <div class="bottom-toolbar">
+        <div class="controls">
+          <button class='playback-control' id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+          <button class='playback-control' id="muteBtn"><i class="mute-btn-icon fa-solid fa-volume-xmark"></i></button>
+          <button class='playback-control' id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+        <!-- <div id="progressBar" class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        <div id="progressHandle" class="progress-handle"></div>
+      </div> -->
+      <input
+        id="progress"
+        class="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
   </div>
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-top w3-bar-block" style="background-color: #ADA5C4; color: white;">
-  <a class="navLink" href="/">Patio Bear</a>
-  <a class="navLink" href="/about.html">Music</a>  
-</nav>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <div class="w3-container w3-padding-32 w3-center" id="home">
-    <img class="albumCover" src="prettypeculiar.png" alt="album cover" class="w3-image" width="500" height="500">
-    
-    <!-- <div class="w3-cell-row">
-      <div class="w3-cell aspect-ratio">
-        <iframe width=100% src="https://www.youtube.com/embed/QrHkqM4QdQE" title="YouTube video player" style="margin: auto;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
-      </div>
-    </div> -->
-    <div class="w3-cell-row" style="margin-bottom: 20px; margin-top: 20px">
-      <div class="w3-cell" style="width:100%;">
-        <b>pretty peculiar</b> streaming everywhere:
-      </div>
-    </div>
-    <div class="w3-cell-row">
-      <div class="w3-cell">
-        <iframe style="border: 0; width: 50%; height: 42px; margin-bottom: 10px;" src="https://bandcamp.com/EmbeddedPlayer/track=2204098149/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://patiobear.bandcamp.com/track/pretty-peculiar">pretty peculiar by Patio Bear</a></iframe></iframe>
-      </div>
-    </div>
-    <div class="w3-cell-row">
-      <div class="w3-cell" style="width:50%">
-        <a href="https://open.spotify.com/artist/56UjJs0m3Frd740BGGNBwm?si=p5o_7P_XRHeMN3fKUVjyDg" class="fa fa-spotify" style="width:100px; height:50px; font-size:42px; text-decoration: none;"></a>
-        <div>Spotify</div>
-      </div>
-      <div class="w3-cell">
-        <a href="https://music.apple.com/us/artist/patio-bear/1531407958" class="fa fa-apple" style="width:100px; height:50px; font-size:42px; text-decoration: none;"></a>
-        <div>Apple Music</div>
-      </div>
-    </div>
+
+  <!-- <div class="video-container">
+
+    <video class="media-video" src="assets/video/nothing-is-everything-vert-video.mp4" playsinline></video>
+    <video class="media-video" src="assets/video/1-2-24_c.mov" playsinline></video>
+    <video class="media-video" src="assets/video/dana-undawata-vert-3.mov" playsinline></video>
+  
   </div>
+  <div class="album-container">
 
-<!-- END PAGE CONTENT -->
-</div>
-<script src="script.js">
-</script>
+    <div class="album" data-audio="assets/audio/pretty-peculiar-sample.wav">
+      <img src="assets/images/prettypeculiar.png" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+    <div class="album" data-audio="assets/audio/home-again-sample.wav">
+      <img src="assets/images/homeagain.png" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+    <div class="album" data-audio="assets/audio/liquid-sun-sample.wav">
+      <img src="assets/images/liquidsun.png" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+    <div class="album" data-audio="assets/audio/ten-years-sample.wav">
+      <img src="assets/images/tenyears.jpeg" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+    <div class="album" data-audio="assets/audio/liquid-sun-sample.wav">
+      <img src="assets/images/nothingiseverything.png" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+    <div class="album" data-audio="assets/audio/woda-marznie-sample.wav">
+      <img src="assets/images/shakinghands.JPG" />
+      <div class="icon play-icon">▶</div>
+      <div class="icon stop-icon">■</div>
+    </div>
+
+  </div> -->
+
+  <script src="script.js"></script>
 </body>
 </html>

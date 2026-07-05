@@ -1,0 +1,98 @@
+[
+    {
+      "title": "Forest Groove",
+      "category": "songs",
+      "type": "video",
+      "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
+      "desktop": "assets/video/1-2-24_b.mov",
+      "mobile": "assets/video/1-2-24_b.mov"
+    },
+    {
+      "title": "Traffic Light",
+      "category": "songs",
+      "type": "video",
+      "credits": "<p>2026</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
+      "desktop": "assets/video/traffic-light-horiz-2-15-26.mp4",
+      "mobile": "assets/video/traffic-light-horiz-2-15-26.mp4"
+    },
+    {
+      "title": "Liquid Sun",
+      "category": "songs",
+      "type": "video",
+      "credits": "<p>2023</p><p>Music: Michael Zachor</p><p>Video: Dana Murtada</p>",
+      "desktop": "assets/video/dana-undawata-2-15-26-horiz-a.mp4",
+      "mobile": "assets/video/dana-undawata-2-15-26-horiz-a.mp4"
+    },
+    {
+      "title": "Bodyfloat",
+      "category": "songs",
+      "type": "video",
+      "credits": "<p>2020</p><p>Music: Michael Zachor</p><p>Video: Austin Barrón</p>",
+      "desktop": "assets/video/bodyfloat-horiz.mp4",
+      "mobile": "assets/video/bodyfloat-horiz.mp4"
+    },
+    {
+      "title": "Rave promo",
+      "category": "promos",
+      "type": "video",
+      "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Rina Peterson</p><p style='font-size: 12px;'>A club promo for The Chocolate Factory.</p>",
+      "desktop": "assets/video/Rave-promo.mov",
+      "mobile": "assets/video/Rave-promo.mov"
+    },
+    {
+      "title": "Nothing Else promo",
+      "category": "promos",
+      "type": "video",
+      "credits": "<p>2025</p><p>Music: Michael Zachor</p><p>Video: Rina Peterson</p><p style='font-size: 12px;'>An ad for Nothing Else skincare.</p>",
+      "desktop": "assets/video/sea-buckthorn.mov",
+      "mobile": "assets/video/sea-buckthorn.mov"
+    },
+    {
+      "title": "Dolos",
+      "category": "scores",
+      "type": "video",
+      "credits": "<p>2024</p><p>Music: Michael Zachor</p><p>Director: Austin Barrón</p><p style='font-size: 12px;'>An ad for Dolos cigarettes</p>",
+      "desktop": "assets/video/dolos.mp4",
+      "mobile": "assets/video/dolos.mp4"
+    },
+    {
+      "title": "Falsifiers",
+      "category": "scores",
+      "type": "video",
+      "credits": "<p>2024</p><p>Music: Michael Zachor</p><p>Director: Ryan Totaro</p><p style='font-size: 12px;'>A trailer for <i>Falsifiers</i> (2024), a short film.</p>",
+      "desktop": "assets/video/falsifiers-trailer.mp4",
+      "mobile": "assets/video/falsifiers-trailer.mp4"
+    },
+    {
+      "title": "pretty peculiar",
+      "category": "songs",
+      "type": "audio",
+      "credits": "<p>2023</p><p>Music: Michael Zachor</p>",
+      "audio": "assets/audio/pretty-peculiar-abridged_5-3.wav",
+      "artwork": "assets/images/prettypeculiar.png"
+    },
+    {
+      "title": "Ten Years",
+      "category": "songs",
+      "type": "audio",
+      "credits": "<p>2022</p><p>Music: Michael Zachor</p>",
+      "audio": "assets/audio/ten-years-sample.wav",
+      "artwork": "assets/images/tenyears.jpeg"
+    },
+    {
+      "title": "Untitled Christmas Jam",
+      "category": "songs",
+      "type": "audio",
+      "credits": "<p>2025</p><p>Music: Michael Zachor</p>",
+      "audio": "assets/audio/christmas-abridged.wav",
+      "artwork": "assets/images/christmas.png"
+    },
+    {
+      "title": "Woda Marznie",
+      "category": "songs",
+      "type": "audio",
+      "credits": "<p>2020</p><p>Music: Michael Zachor</p>",
+      "audio": "assets/audio/woda-marznie-sample.wav",
+      "artwork": "assets/images/shakinghands.JPG"
+    }
+  ]
