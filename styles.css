@@ -78,15 +78,15 @@ body[data-layout="letterbox"] .bg-video {
   color: white;
 }
 
+.top-content {
+  display: flex;
+  justify-content: space-between;
+}
+
 .nav-item.active {
   background: rgba(255,255,255,0.6);
   color: black;
   font-weight: 500;
-}
-
-.top-meta-info {
-  display: flex;
-  justify-content: space-between;
 }
 
 #songCredits {
@@ -103,11 +103,11 @@ body[data-layout="letterbox"] .bg-video {
 }
 
 #patiobear {
-  font-size: 42px;
+  font-size: 36px;
 }
 
 .links {
-  margin-top: 12px;
+  /* margin-top: 12px; */
   display: flex;
   gap: 12px;
   align-items: center;
@@ -121,14 +121,14 @@ a {
 }
 
 #songTitle {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   font-style: italic;
   margin-bottom: 4px;
   color: rgba(255,255,255,0.8);
 }
 
 #songCredits {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   color: rgba(255,255,255,0.8);
 }
 
@@ -257,6 +257,14 @@ a {
 
   cursor: pointer;
 }
+
+.patiobear-img {
+  display: none;
+}
+
+.media-details {
+  margin-left: 1.2rem;
+}
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 768px) {
@@ -265,11 +273,11 @@ a {
     padding: 0.75rem;
   }
 
-  .top-meta-info {
+  .top-content {
     align-items: flex-start;
   }
 
-  .song-info {
+  .site-title {
     max-width: 65%;
   }
 
@@ -279,19 +287,20 @@ a {
   }
 
   .patiobear-img {
-    width: 36px;
-    height: 36px;
+    /* width: 30px;
+    height: 30px; */
+    display: none;
   }
 
   #patiobear {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 0.95;
   }
 
   .links {
     font-size: 1.2rem;
-    gap: 0.5rem;
-    width: 24px;
+    gap: 1rem;
+    /* width: 24px; */
     flex-wrap: wrap;
   }
 
@@ -311,10 +320,9 @@ a {
 
   /* Right-aligned vertical navigation */
 
-  .navbar {
+  .category-menu {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 2px;
   }
   

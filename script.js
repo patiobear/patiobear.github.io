@@ -28,6 +28,8 @@ let currentCategory = "songs";
 const songTitle = document.getElementById("songTitle");
 const songCredits = document.getElementById("songCredits");
 
+const mediaList = document.getElementById("mediaList");
+
 let currentIndex = 0;
 
 async function loadVideoList() {
@@ -39,12 +41,48 @@ async function loadVideoList() {
   desktopVideo.classList.add("active");
 }
 
+function renderMediaList() {
+  mediaList.innerHTML = "";
+
+  videos.forEach((media, index) => {
+
+    const item = document.createElement("div");
+    item.className = "media-item";
+
+    if (index === currentIndex) {
+      item.classList.add("active");
+    }
+
+    item.innerHTML = `
+      <div class="media-title">
+        <span class="media-indicator">
+          ${index === currentIndex ? "▶" : ""}
+        </span>
+
+        ${media.title}
+      </div>
+
+      <div class="media-details">
+        ${media.credits}
+      </div>
+    `;
+
+    item.addEventListener("click", () => {
+      loadVideo(index);
+    });
+
+    mediaList.appendChild(item);
+
+  });
+}
+
 function changeCategory(category, btn=songsBtn) {
   currentCategory = category
   navBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.category === currentCategory));
   videos = allVideos.filter(v => v.category === category);
   currentIndex = 0;
   loadVideo(0);
+  renderMediaList();
 }
 
 function isMobile() {
@@ -64,10 +102,11 @@ function loadVideo(index) {
 
   const media = videos[index];
   currentItem = media;
+  renderMediaList();
   document.body.dataset.layout = media.layout || "cover";
 
-  songTitle.textContent = media.title;
-  songCredits.innerHTML = media.credits;
+  // songTitle.textContent = media.title;
+  // songCredits.innerHTML = media.credits;
 
   progress.value = 0;
 
@@ -129,7 +168,7 @@ function loadVideo(index) {
 }
 
 function updateArtworkPosition() {
-  const header = document.querySelector(".top-meta-info");
+  const header = document.querySelector(".top-content");
 
   document.documentElement.style.setProperty(
     "--artwork-top",
