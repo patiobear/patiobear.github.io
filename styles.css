@@ -22,6 +22,16 @@ body {
   background: black; /* prevents white flash */
 }
 
+/* solid black backdrop behind all media (videos + artwork) so the
+   previously viewed media never shows through letterboxing/insets */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: -2;
+}
+
 /* Background video base styling */
 .bg-video {
   position: fixed;
@@ -329,6 +339,12 @@ a {
   flex-direction: column;
   gap: 0.35rem;
   margin-top: 0.75rem;
+
+  /* keep the list within the viewport and scroll if it's too tall */
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  /* room so item text isn't hidden under the scrollbar */
+  padding-right: 0.35rem;
 }
 
 .media-title {
@@ -439,6 +455,18 @@ a {
 
   .site-title {
     max-width: 65%;
+    /* never shrink below its content, so the icons + name stay on one row */
+    flex-shrink: 0;
+  }
+
+  /* let the left column give up space (its titles wrap) instead of
+     squeezing the title block */
+  .top-content > div:first-child {
+    min-width: 0;
+  }
+
+  .media-title-text {
+    overflow-wrap: anywhere;
   }
 
   .logo {
@@ -461,7 +489,7 @@ a {
     font-size: 1.2rem;
     gap: 1rem;
     /* width: 24px; */
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   #songTitle {

@@ -30,7 +30,7 @@
     "title": "Bodyfloat",
     "category": "songs",
     "type": "video",
-    "credits": "<p>2020</p><p>Music: Michael Zachor</p><p>Video: Austin Barrón</p>",
+    "credits": "<p>2020</p><p>Music: Michael Zachor</p><p>Video: Austin Barrón</p><p>From the album <i>Shaking Hands</i></p>",
     "desktop": "assets/video/bodyfloat-small.mp4",
     "mobile": "assets/video/bodyfloat-small.mp4",
     "layout": "cover"
@@ -77,7 +77,7 @@
     "type": "audio",
     "credits": "<p>2023</p><p>Music: Michael Zachor</p>",
     "audio": "assets/audio/pretty-peculiar-small.m4a",
-    "artwork": "assets/images/prettypeculiar.png",
+    "artwork": "assets/images/prettypeculiar.webp",
     "layout": "cover"
   },
   {
@@ -102,7 +102,7 @@
     "title": "Woda Marznie",
     "category": "songs",
     "type": "audio",
-    "credits": "<p>2020</p><p>Music: Michael Zachor</p>",
+    "credits": "<p>2020</p><p>Music: Michael Zachor</p><p>From the album <i>Shaking Hands</i></p>",
     "audio": "assets/audio/woda-marznie-small.m4a",
     "artwork": "assets/images/shakinghands.webp",
     "layout": "cover"
