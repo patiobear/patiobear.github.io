@@ -7,8 +7,7 @@ const desktopVideo = document.getElementById("desktopVideo");
 const mobileVideo = document.getElementById("mobileVideo");
 
 const muteBtn = document.getElementById("muteBtn");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+const playFob = document.getElementById("playFob");
 
 const songsBtn = document.querySelector('.nav-item-songs');
 const scoresBtn = document.querySelector('.nav-item-scores');
@@ -28,6 +27,8 @@ let currentCategory = "songs";
 const songTitle = document.getElementById("songTitle");
 const songCredits = document.getElementById("songCredits");
 
+const mediaList = document.getElementById("mediaList");
+
 let currentIndex = 0;
 
 async function loadVideoList() {
@@ -39,11 +40,64 @@ async function loadVideoList() {
   desktopVideo.classList.add("active");
 }
 
+function renderMediaList() {
+  mediaList.innerHTML = "";
+
+  videos.forEach((media, index) => {
+
+    const item = document.createElement("div");
+    item.className = "media-item";
+    item.dataset.index = index;
+
+    item.innerHTML = `
+      <div class="media-title">
+        <span class="media-indicator"></span>
+
+        <span class="media-title-text">${media.title}</span>
+      </div>
+
+      <div class="media-details">
+        <div class="media-details-inner">${media.credits}</div>
+      </div>
+    `;
+
+    const titleEl = item.querySelector(".media-title");
+    titleEl.addEventListener("click", () => {
+      if (index === currentIndex) {
+        item.classList.toggle("expanded");
+      } else {
+        loadVideo(index);
+      }
+    });
+
+    mediaList.appendChild(item);
+
+  });
+
+  updateMediaListActive();
+}
+
+// Update which item is active/expanded without rebuilding the DOM,
+// so the expand/collapse CSS transition animates on click and on switch.
+function updateMediaListActive() {
+  mediaList.querySelectorAll(".media-item").forEach((item) => {
+    const isActive = Number(item.dataset.index) === currentIndex;
+    item.classList.toggle("active", isActive);
+    item.classList.toggle("expanded", isActive);
+
+    const indicator = item.querySelector(".media-indicator");
+    indicator.innerHTML = isActive
+      ? '<span class="eq"><i></i><i></i><i></i></span>'
+      : "";
+  });
+}
+
 function changeCategory(category, btn=songsBtn) {
   currentCategory = category
   navBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.category === currentCategory));
   videos = allVideos.filter(v => v.category === category);
   currentIndex = 0;
+  renderMediaList();
   loadVideo(0);
 }
 
@@ -64,10 +118,12 @@ function loadVideo(index) {
 
   const media = videos[index];
   currentItem = media;
+  updateMediaListActive();
+  hidePlayFob();
   document.body.dataset.layout = media.layout || "cover";
 
-  songTitle.textContent = media.title;
-  songCredits.innerHTML = media.credits;
+  // songTitle.textContent = media.title;
+  // songCredits.innerHTML = media.credits;
 
   progress.value = 0;
 
@@ -124,17 +180,6 @@ function loadVideo(index) {
 
   desktopVideo.onloadeddata = handleLoaded;
   mobileVideo.onloadeddata = handleLoaded;
-
-  updateArtworkPosition();
-}
-
-function updateArtworkPosition() {
-  const header = document.querySelector(".top-meta-info");
-
-  document.documentElement.style.setProperty(
-    "--artwork-top",
-    `${header.offsetHeight + 32}px`
-  );
 }
 
 function switchVideoVersion(syncTime = true) {
@@ -162,20 +207,29 @@ function switchVideoVersion(syncTime = true) {
 }
 
 
-function nextVideo() {
-  currentIndex = (currentIndex + 1) % videos.length;
-  loadVideo(currentIndex);
-  desktopVideo.classList.add("active");
+function showPlayFob() {
+  playFob.classList.add("visible");
 }
 
-function prevVideo() {
-  currentIndex =
-    (currentIndex - 1 + videos.length) % videos.length;
-  loadVideo(currentIndex);
-  desktopVideo.classList.add("active");
+function hidePlayFob() {
+  playFob.classList.remove("visible");
+}
+
+function togglePlayPause() {
+  const media = getActiveMedia();
+  if (media.paused) {
+    media.play();
+    hidePlayFob();
+  } else {
+    media.pause();
+    showPlayFob();
+  }
 }
 
 function toggleMute() {
+  // First click also moves the button from center to its corner home.
+  muteBtn.classList.remove("intro");
+
   const activeVideo =  getActiveMedia();
   const newMuteState = !activeVideo.muted;
 
@@ -202,7 +256,6 @@ muteBtnIcon.classList.toggle('fa-volume-high');
 //   progressHandle.style.left = percent + "%";
 // }
 
-window.addEventListener("resize", updateArtworkPosition)
 
 function updateProgress() {
   const activeVideo =  getActiveMedia();
@@ -277,9 +330,19 @@ desktopVideo.addEventListener("timeupdate", updateProgress);
 mobileVideo.addEventListener("timeupdate", updateProgress);
 
 // Button listeners
-nextBtn.addEventListener("click", nextVideo);
-prevBtn.addEventListener("click", prevVideo);
 muteBtn.addEventListener("click", toggleMute);
+playFob.addEventListener("click", () => {
+  getActiveMedia().play();
+  hidePlayFob();
+});
+
+// Click anywhere that isn't an interactive region to pause/resume.
+const NON_PAUSE_SELECTOR =
+  ".media-list, .category-menu, .site-title, .mute-fab, .play-fob, .about-modal";
+document.addEventListener("click", (e) => {
+  if (e.target.closest(NON_PAUSE_SELECTOR)) return;
+  togglePlayPause();
+});
 
 songsBtn.addEventListener("click", (e) => changeCategory('songs', e.target))
 scoresBtn.addEventListener("click", (e) => changeCategory('scores', e.target))
