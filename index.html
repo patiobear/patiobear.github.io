@@ -1,79 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patio Bear</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patio Bear</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-<body>
-  <video 
-    id="desktopVideo"
-    class="bg-video desktop-video"
-    autoplay 
-    muted 
-    loop 
-    playsinline
-  ></video>
+  <body>
+    <video
+      id="desktopVideo"
+      class="bg-video desktop-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
 
-  <video 
-    id="mobileVideo"
-    class="bg-video mobile-video"
-    autoplay 
-    muted 
-    loop 
-    playsinline
-  ></video>
+    <video
+      id="mobileVideo"
+      class="bg-video mobile-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
 
-  <img 
-    id="artwork"
-    class="bg-artwork"
-  />
+    <img id="artwork" class="bg-artwork" />
 
-  <div class="overlay">
-    <div class="top-content">
-      <div>
-        <div class="category-menu">
-          <button class="playback-control nav-item nav-item-songs" data-category="songs">Songs</button>
-          <button class="playback-control nav-item nav-item-scores" data-category="scores">Scores</button>
-          <button class="playback-control nav-item nav-item-promos" data-category="promos">Promos</button>
-          <button class="playback-control nav-item nav-item-about">About</button>
-        </div>
-        <div id="mediaList" class="media-list"></div>
-        <!-- <h2 id="songTitle"></h2>
-        <div id="songCredits"></div> -->
-      </div>
-      <div class="site-title">
-        <div class="logo">
-          <div>
-            <h1 id="patiobear">Patio Bear</h1>
+    <div class="overlay">
+      <div class="top-content">
+        <div>
+          <div class="category-menu">
+            <button
+              class="playback-control nav-item nav-item-songs"
+              data-category="songs"
+            >
+              Songs
+            </button>
+            <button
+              class="playback-control nav-item nav-item-scores"
+              data-category="scores"
+            >
+              Scores
+            </button>
+            <button
+              class="playback-control nav-item nav-item-promos"
+              data-category="promos"
+            >
+              Promos
+            </button>
+            <button class="playback-control nav-item nav-item-about">
+              About
+            </button>
           </div>
-          <img class="patiobear-img" src="bear copy.png" height="50" width="50">
+          <div id="mediaList" class="media-list"></div>
+          <!-- <h2 id="songTitle"></h2>
+        <div id="songCredits"></div> -->
         </div>
-        <div class="links">
-          <a href="https://open.spotify.com/artist/56UjJs0m3Frd740BGGNBwm?si=zR4A1UVMSJOA3hPgvLE9JQ"><i class="fa-brands fa-spotify"></i></a>
-          <a href="https://music.apple.com/us/artist/patio-bear/1531407958"><i class="fa-brands fa-apple"></i></a>
-          <a href="https://www.youtube.com/@patiobear8681"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://patiobear.bandcamp.com/music"><i class="fa-brands fa-bandcamp"></i></a>
+        <div class="site-title">
+          <div class="logo">
+            <div>
+              <h1 id="patiobear">Patio Bear</h1>
+            </div>
+            <img
+              class="patiobear-img"
+              src="bear copy.png"
+              height="50"
+              width="50"
+            />
+          </div>
+          <div class="links">
+            <a
+              href="https://open.spotify.com/artist/56UjJs0m3Frd740BGGNBwm?si=zR4A1UVMSJOA3hPgvLE9JQ"
+              ><i class="fa-brands fa-spotify"></i
+            ></a>
+            <a href="https://music.apple.com/us/artist/patio-bear/1531407958"
+              ><i class="fa-brands fa-apple"></i
+            ></a>
+            <a href="https://www.youtube.com/@patiobear8681"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="https://patiobear.bandcamp.com/music"
+              ><i class="fa-brands fa-bandcamp"></i
+            ></a>
+          </div>
         </div>
       </div>
-    </div>
-      <div class="bottom-toolbar">
-        <div class="controls">
-          <button class='playback-control' id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
-          <button class='playback-control' id="muteBtn"><i class="mute-btn-icon fa-solid fa-volume-xmark"></i></button>
-          <button class='playback-control' id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
-        </div>
-        <!-- <div id="progressBar" class="progress-bar">
-          <div id="progressFill" class="progress-fill"></div>
-        <div id="progressHandle" class="progress-handle"></div>
-      </div> -->
+      <!-- mute button: starts centered, flies to the corner on first click -->
+      <button class="mute-fab intro" id="muteBtn" aria-label="Toggle mute">
+        <i class="mute-btn-icon fa-solid fa-volume-xmark"></i>
+      </button>
+
+      <!-- big play button shown when the media is paused -->
+      <button class="play-fob" id="playFob" aria-label="Play">
+        <i class="fa-solid fa-play"></i>
+      </button>
+
       <input
         id="progress"
         class="progress"
@@ -83,36 +114,42 @@
         value="0"
       />
     </div>
-  </div>
 
-  <div id="aboutModal" class="about-modal">
-    <div class="about-content">
-      <button id="closeAbout" class="about-close">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-  
-      <h2>Patio Bear</h2>
-  
-      <p>
-        I'm Michael Zachor. I create original music for
-        film, advertising, and my own artist project, Patio Bear.
-      </p>
-  
-      <p>
-        My work spans electronic music, indie rock, ambient textures, and cinematic
-        scoring.
-      </p>
-  
-      <p>
-        Feel free to reach out if you'd like to work together.
-      </p>
-      <div class="socials-section">
-        <div><i class='social-icon fa-solid fa-envelope'></i>patio.bear.music@gmail.com</div>
-        <div><a href="https://www.instagram.com/patiobear_music"><i class='social-icon fa-brands fa-instagram'></i>@patiobear_music</a></div>
+    <div id="aboutModal" class="about-modal">
+      <div class="about-content">
+        <button id="closeAbout" class="about-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Patio Bear</h2>
+
+        <p>
+          Hi I'm Michael! I make music for film, advertising, and my own artist
+          project, Patio Bear.
+        </p>
+
+        <p>
+          I make all types of music but feel most at home with indie rock,
+          electronic music, and ambient textures. Feel free to reach out if
+          you'd like to work together!
+        </p>
+        <div class="socials-section">
+          <div class="social-item">
+            <i class="social-icon fa-solid fa-envelope"></i
+            >patio.bear.music@gmail.com
+          </div>
+          <div>
+            <a
+              class="social-item"
+              href="https://www.instagram.com/patiobear_music"
+              ><i class="social-icon fa-brands fa-instagram"></i
+              >@patiobear_music</a
+            >
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
